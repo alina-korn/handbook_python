@@ -1,7 +1,15 @@
-n = input().strip()
+number = input().strip()
 
-digits = list(n)
+digits = list(number)
 
-two_digit_numbers = {int(d1 + d2) for i, d1 in enumerate(digits) for j, d2 in enumerate(digits) if i != j}
+two_digit_numbers = []
+for i in range(3):
+    for j in range(3):
+        if i != j and digits[i] != '0':
+            two_digit_numbers.append(int(digits[i] + digits[j]))
 
-print(min(two_digit_numbers), max(two_digit_numbers))
+
+min_number = min(two_digit_numbers)
+max_number = max(two_digit_numbers)
+
+print(min_number, max_number)
